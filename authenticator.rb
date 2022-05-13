@@ -15,13 +15,13 @@ puts "Welcome to the authenticator"
 25.times {print "-"}
 
 def auth_user(username, password, list_of_users)
-list_of_users.each do |user_record|
-      if user_record[:username] == username && user_record[:password] == password
-        return user_record
-      end
-    end 
+  list_of_users.each do |user_record|
+    if user_record[:username] == username && user_record[:password] == password
+      return user_record
+    end
+end 
      "username and/or password not found"
-  end
+end
     attempts = 1
 while attempts < 4
   print "username: "
@@ -30,11 +30,11 @@ while attempts < 4
   password = gets.chomp
 auth = auth_user(username, password, users)
   puts auth
-    puts "Press n to quit or any other key to continue"
-    input = gets.chomp.downcase
-    break if input == "n"
+  puts "Press n to quit or any other key to continue"
+  input = gets.chomp.downcase
+  break if input == "n"
    
-    attempts += 1 
+  attempts += 1 
 
 end 
 puts "you have exceeded the number of attempts" if attempts == 4
